@@ -1,0 +1,45 @@
+{
+    "name": "underscore-bd",
+    "author": "Boldhouse",
+    "version": "1.11.0",
+    "license": "MIT",
+    "description": "JavaScript's functional programming helper library.",
+    "type": "module",
+    "main": "lib/underscore.esm.js",
+    "module": "lib/underscore.esm.js",
+    "jsnext:main": "lib/underscore.esm.js",
+    "scripts": {
+        "build": "rollup -c ",
+        "doc": "docco src/underscore.js -l linear -t ../docco.jst -c ../docco.css",
+        "lint": "eslint src/underscore.js",
+        "test": "jest",
+        "minify": "terser ./underscore.js -o ./underscore.min.js -c -m --source-map \"filename='underscore.min.js.map'\"",
+        "weight": "npm run minify | gzip-size | pretty-bytes"
+    },
+    "devDependencies": {
+        "@babel/core": "7.4.3",
+        "@babel/preset-env": "7.4.3",
+        "@babel/register": "7.4.0",
+        "babel-plugin-istanbul": "^5.1.0",
+        "docco": "^0.8.1",
+        "eslint": "1.10.x",
+        "gzip-size-cli": "^1.0.0",
+        "jest": "^26.6.3",
+        "pretty-bytes-cli": "^1.0.0",
+        "rollup": "1.10.0",
+        "rollup-plugin-babel": "4.3.2",
+        "rollup-plugin-browsersync": "1.0.0",
+        "rollup-plugin-commonjs": "9.3.4",
+        "rollup-plugin-eslint": "5.1.0",
+        "rollup-plugin-json": "4.0.0",
+        "rollup-plugin-multi-entry": "2.1.0",
+        "rollup-plugin-node-globals": "1.4.0",
+        "rollup-plugin-node-resolve": "4.2.3",
+        "rollup-plugin-terser": "4.0.4",
+        "terser": "^4.8.0"
+    },
+    "dependencies": {
+        "underscore": "^1.12.1",
+        "underscore.string": "^3.3.5"
+    }
+}
